@@ -20,7 +20,7 @@ const App = () => {
   return (
     <div className="container">
       {which == "Cards" && data.length > 0 && <Cards items={data} setWhich={setWhich} />}
-      {which == "Create" && <AddCard setWhich={setWhich} setData={data}/>}
+      {which == "Create" && <AddCard setWhich={setWhich} setData={setData}/>}
     </div>
   )
 }

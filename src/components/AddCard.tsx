@@ -3,10 +3,10 @@ import type { CardTpye } from '../App'
 
 type Voids = {
     setWhich: React.Dispatch<React.SetStateAction<"Cards" | "Create">> 
-    setData: CardTpye[]
+    setData:  React.Dispatch<React.SetStateAction<CardTpye[]>>
 }
 
-const AddCard = ({setWhich, setData}: Voids) => {
+const AddCard = ({setWhich, setData}:  Voids) => {
     
     const[getQues, setQues] = useState<string>("")
     const[getAns, setAns] = useState<string>("")
@@ -16,7 +16,7 @@ const AddCard = ({setWhich, setData}: Voids) => {
             question: getQues,
             answer:getAns
         }
-        setData.push(newList)
+        setData(prev => [...prev, newList])
     }   
 
   return (
